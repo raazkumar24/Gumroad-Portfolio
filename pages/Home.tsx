@@ -26,8 +26,8 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
 
   const itemVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { type: 'spring' as const, damping: 20, stiffness: 100 }
     }
@@ -38,7 +38,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
       {/* Hero Section */}
       <section className="px-4 relative min-h-[95vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <motion.div 
+          <motion.div
             animate={{ rotate: 360, scale: [1, 1.1, 1] }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] border-[20px] border-blue-600/5 dark:border-blue-400/5 border-dashed rounded-full"
@@ -46,14 +46,14 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
         </div>
 
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-8 space-y-10 z-10"
           >
             <div className="flex items-center gap-4">
-              <motion.div 
+              <motion.div
                 whileHover={{ rotate: 180, scale: 1.2 }}
                 transition={{ type: 'spring', stiffness: 300 }}
                 className="w-12 h-12 bg-yellow-400 border-4 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)]"
@@ -89,26 +89,26 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
             </div>
           </motion.div>
 
-          {/* Restored & Enhanced Hero Visual */}
-          <motion.div 
+          {/* Enhanced Hero Visual */}
+          <motion.div
             initial={{ opacity: 0, scale: 0.8, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
             className="lg:col-span-4 hidden lg:block relative"
           >
-            <div className="relative group max-w-sm mx-auto">
+            <div className="relative group max-w-sm mx-auto z-10">
               {/* Layered Decorative Backgrounds */}
-              <motion.div 
+              <motion.div
                 whileHover={{ rotate: 0, scale: 1.05 }}
-                className="absolute -inset-6 bg-blue-600 -rotate-6 border-8 border-black -z-10 transition-all duration-500 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.1)]" 
+                className="absolute -inset-6 bg-blue-600 -rotate-6 border-8 border-black z-10 transition-all duration-500 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.1)] z-10"
               />
-              <motion.div 
+              <motion.div
                 whileHover={{ rotate: 0, scale: 1.02 }}
-                className="absolute -inset-6 bg-yellow-400 rotate-6 border-8 border-black -z-20 transition-all duration-500" 
+                className="absolute -inset-6 bg-yellow-400 rotate-6 border-8 border-black z-0 transition-all duration-500 z-0"
               />
-              
+
               {/* Floating Badge */}
-              <motion.div 
+              <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1 }}
@@ -120,13 +120,13 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
               </motion.div>
 
               {/* Main Image Container */}
-              <div className="bg-white dark:bg-neutral-900 border-8 border-black dark:border-white p-2 neo-shadow overflow-hidden relative">
-                <img 
-                  src="/profile2.jpg" 
-                  alt="Raj Shekhar" 
-                  className="w-full h-auto grayscale contrast-125 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" 
+              <div className="bg-white dark:bg-neutral-900 border-8 border-black dark:border-white p-2 neo-shadow overflow-hidden relative z-20">
+                <img
+                  src="/profile2.jpg"
+                  alt="Raj Shekhar"
+                  className="w-full h-auto grayscale contrast-125 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                 />
-                
+
                 {/* Image Footer Label */}
                 <div className="p-5 bg-black text-white flex justify-between items-center border-t-8 border-black">
                   <div className="flex flex-col">
@@ -140,17 +140,39 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
               </div>
 
               {/* Experience Badge Overlay */}
-              <div className="absolute -bottom-6 -right-6 bg-green-400 border-4 border-black px-4 py-2 rotate-6 group-hover:rotate-0 transition-transform shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                 <span className="text-xs font-black uppercase text-black">3+ Years Exp.</span>
+              <div className="absolute -bottom-6 -right-6 bg-green-400 border-4 border-black px-4 py-2 rotate-6 group-hover:rotate-0 transition-transform shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-30">
+                <span className="text-xs font-black uppercase text-black">3+ Years Exp.</span>
               </div>
             </div>
           </motion.div>
+
+          {/* mobile image version */}
+          <div className="lg:hidden px-4">
+              <div className="bg-white dark:bg-neutral-900 border-8 border-black dark:border-white p-2 neo-shadow overflow-hidden relative z-20">
+              <img
+                src="/profile2.jpg"
+                alt="Raj Shekhar"
+                className="w-full h-auto grayscale contrast-125"
+              />
+
+              {/* Image Footer Label */}
+              <div className="p-5 bg-black text-white flex justify-between items-center border-t-8 border-black">
+                <div className="flex flex-col">
+                  <span className="font-black uppercase tracking-[0.2em] text-[10px] text-blue-400">Title</span>
+                  <span className="font-black uppercase tracking-widest text-sm">Lead MERN Architect</span>
+                </div>
+                <div className="w-10 h-10 bg-yellow-400 border-2 border-white flex items-center justify-center -rotate-12 group-hover:rotate-0 transition-transform">
+                  <Zap size={20} fill="#000" stroke="none" className="animate-pulse" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Marquee Section */}
       <section className="bg-black text-white py-12 border-y-4 border-black overflow-hidden relative">
-        <motion.div 
+        <motion.div
           animate={{ x: [0, -1500] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="flex whitespace-nowrap gap-24 items-center"
@@ -172,7 +194,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
       {/* Approach Section */}
       <section className="max-w-7xl mx-auto px-4 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -189,7 +211,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
                 { icon: <Shield size={32} className="text-green-500" />, title: 'Bulletproof Security', desc: 'Enterprise encryption and secure data handling as a core requirement.' },
               ].map((item, i) => (
                 <motion.div variants={itemVariants} key={i} className="flex gap-8 group">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ scale: 1.1, rotate: 10, y: -5 }}
                     className="w-20 h-20 shrink-0 border-4 border-black bg-white dark:bg-neutral-800 flex items-center justify-center neo-shadow transition-all group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20"
                   >
@@ -204,35 +226,35 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, type: 'spring' }}
             className="relative"
           >
-             <div className="absolute inset-0 bg-blue-600 border-4 border-black -rotate-2 translate-x-6 translate-y-6" />
-             <div className="relative bg-white dark:bg-neutral-900 border-4 border-black dark:border-white p-12 neo-shadow">
-               <div className="flex items-center gap-6 mb-10">
-                 <div className="w-16 h-16 bg-purple-600 border-4 border-black flex items-center justify-center text-white">
-                   <Layout size={32} />
-                 </div>
-                 <h3 className="text-4xl font-black uppercase italic text-black dark:text-white">The Stack</h3>
-               </div>
-               <p className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-12 leading-relaxed italic">
-                 "I don't just build websites; I craft ecosystems. Performance and accessibility aren't features; they're foundation."
-               </p>
-               <div className="grid grid-cols-2 gap-6">
-                 <div className="p-8 bg-gray-50 dark:bg-black border-4 border-black flex flex-col items-center group hover:bg-yellow-400 transition-colors">
-                   <span className="text-5xl font-black text-black dark:text-white group-hover:text-black">99.9%</span>
-                   <span className="text-xs font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-black mt-2">Quality Focus</span>
-                 </div>
-                 <div className="p-8 bg-gray-50 dark:bg-black border-4 border-black flex flex-col items-center group hover:bg-green-400 transition-colors">
-                   <span className="text-5xl font-black text-black dark:text-white group-hover:text-black">100ms</span>
-                   <span className="text-xs font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-black mt-2">Core Latency</span>
-                 </div>
-               </div>
-             </div>
+            <div className="absolute inset-0 bg-blue-600 border-4 border-black -rotate-2 translate-x-6 translate-y-6" />
+            <div className="relative bg-white dark:bg-neutral-900 border-4 border-black dark:border-white p-12 neo-shadow">
+              <div className="flex items-center gap-6 mb-10">
+                <div className="w-16 h-16 bg-purple-600 border-4 border-black flex items-center justify-center text-white">
+                  <Layout size={32} />
+                </div>
+                <h3 className="text-4xl font-black uppercase italic text-black dark:text-white">The Stack</h3>
+              </div>
+              <p className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-12 leading-relaxed italic">
+                "I don't just build websites; I craft ecosystems. Performance and accessibility aren't features; they're foundation."
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="p-8 bg-gray-50 dark:bg-black border-4 border-black flex flex-col items-center group hover:bg-yellow-400 transition-colors">
+                  <span className="text-5xl font-black text-black dark:text-white group-hover:text-black">99.9%</span>
+                  <span className="text-xs font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-black mt-2">Quality Focus</span>
+                </div>
+                <div className="p-8 bg-gray-50 dark:bg-black border-4 border-black flex flex-col items-center group hover:bg-green-400 transition-colors">
+                  <span className="text-5xl font-black text-black dark:text-white group-hover:text-black">100ms</span>
+                  <span className="text-xs font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-black mt-2">Core Latency</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -241,7 +263,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
       <section className="bg-gray-100 dark:bg-neutral-900 border-y-8 border-black py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -273,12 +295,12 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4 py-32">
-        <motion.div 
+        <motion.div
           whileHover={{ scale: 1.01 }}
           className="bg-blue-600 border-8 border-black p-12 md:p-28 text-center space-y-12 relative overflow-hidden group shadow-[24px_24px_0px_0px_rgba(0,0,0,1)]"
         >
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-          <motion.div 
+          <motion.div
             animate={{ rotate: [0, 90, 180, 270, 360] }}
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             className="absolute -top-32 -right-32 w-80 h-80 border-4 border-white/20 border-dashed rounded-full"
