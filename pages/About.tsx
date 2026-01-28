@@ -18,7 +18,13 @@ import {
   Zap,
   Box,
   Monitor,
+  ArrowLeft,
+  ArrowRight
 } from 'lucide-react';
+
+import { Link } from 'react-router-dom';
+import NeoButton from '../components/NeoButton';
+
 
 const About: React.FC = () => {
   const skillColors = [
@@ -71,6 +77,19 @@ const About: React.FC = () => {
               Over the last 3 years, I've transformed from a curious student into a technical lead, focused on creating scalable MERN architectures that solve real-world problems.
             </p>
           </div>
+
+            {/* Back Button - Mobile */}
+            <div className="max-w-7xl mx-auto lg:hidden">
+              <Link to="/">
+                <NeoButton
+                  variant="outline"
+                  className="flex items-center gap-3 font-black group px-6 py-3 text-base"
+                >
+                  <ArrowLeft size={20} />
+                  Back to Home
+                </NeoButton>
+              </Link>
+            </div>
         </motion.div>
 
         <motion.div
@@ -79,7 +98,6 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
           className="lg:col-span-5 relative"
         >
-          <div className="absolute -inset-8 bg-blue-600 -rotate-3 border-4 border-black -z-10" />
           <div className="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white p-3 neo-shadow transition-transform hover:scale-[1.02] duration-500">
             <div className="bg-green-500 p-8 text-black font-black uppercase tracking-widest text-lg border-b-4 border-black flex justify-between items-center">
               <span className="flex items-center gap-3"><Globe size={24} /> Mumbai, IN</span>
@@ -169,7 +187,7 @@ const About: React.FC = () => {
       {/* Education Timeline */}
       <section className="max-w-7xl mx-auto px-4 space-y-24">
         <div className="flex items-center gap-10">
-          <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter italic border-l-[12px] border-purple-600 pl-10 text-black dark:text-white">
+          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic border-l-[12px] border-purple-600 pl-10 text-black dark:text-white">
             Trajectory.
           </h2>
 
@@ -177,9 +195,10 @@ const About: React.FC = () => {
           <motion.div
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4 }}
-            className="w-20 h-20 bg-yellow-400 border-4 border-black hidden lg:flex items-center justify-center neo-shadow"
+            className="w-20 h-20 bg-yellow-400 border-4 border-black lg:flex items-center hidden justify-center neo-shadow"
           >
-            <Coffee size={40} className="text-black" />
+            <Coffee size={40} className="text-black dark:text-white hidden lg:block" />
+            {/* <Coffee size={25} className="text-black dark:text-white block lg:hidden" /> */}
           </motion.div>
         </div>
 
@@ -315,6 +334,18 @@ const About: React.FC = () => {
               Repos pushed <br /> to production <br /> <span className="text-blue-500">this year</span>
             </div>
           </motion.div> */}
+             {/* Back to Home Button - Desktop */}
+        <div className="hidden lg:flex justify-center pt-12">
+        </div>
+          <Link to="/">
+            <NeoButton
+              variant="outline"
+              className="flex items-center gap-4 font-black group px-12 py-5 text-xl"
+            >
+              <ArrowRight size={24} className="rotate-180" />
+              Back to Home
+            </NeoButton>
+          </Link>
         </div>
       </section>
     </div>
