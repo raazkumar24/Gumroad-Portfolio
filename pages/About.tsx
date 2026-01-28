@@ -78,18 +78,18 @@ const About: React.FC = () => {
             </p>
           </div>
 
-            {/* Back Button - Mobile */}
-            <div className="max-w-7xl mx-auto lg:hidden">
-              <Link to="/">
-                <NeoButton
-                  variant="outline"
-                  className="flex items-center gap-3 font-black group px-6 py-3 text-base"
-                >
-                  <ArrowLeft size={20} />
-                  Back to Home
-                </NeoButton>
-              </Link>
-            </div>
+          {/* Back Button - Mobile */}
+          <div className="max-w-7xl mx-auto lg:hidden">
+            <Link to="/">
+              <NeoButton
+                variant="outline"
+                className="flex items-center gap-3 font-black group px-6 py-3 text-base"
+              >
+                <ArrowLeft size={20} />
+                Back to Home
+              </NeoButton>
+            </Link>
+          </div>
         </motion.div>
 
         <motion.div
@@ -100,7 +100,7 @@ const About: React.FC = () => {
         >
           <div className="bg-white dark:bg-neutral-900 border-4 border-black dark:border-white p-3 neo-shadow transition-transform hover:scale-[1.02] duration-500">
             <div className="bg-green-500 p-8 text-black font-black uppercase tracking-widest text-lg border-b-4 border-black flex justify-between items-center">
-              <span className="flex items-center gap-3"><Globe size={24} /> Mumbai, IN</span>
+              <span className="flex items-center gap-3"><Globe size={24} /> Chandigarh, IN</span>
               <span className="bg-black text-white px-3 py-1 text-xs">Available</span>
             </div>
             <img
@@ -334,18 +334,18 @@ const About: React.FC = () => {
               Repos pushed <br /> to production <br /> <span className="text-blue-500">this year</span>
             </div>
           </motion.div> */}
-             {/* Back to Home Button - Desktop */}
-        <div className="hidden lg:flex justify-center pt-12">
-        </div>
-          <Link to="/">
-            <NeoButton
-              variant="outline"
-              className="flex items-center gap-4 font-black group px-12 py-5 text-xl"
-            >
-              <ArrowRight size={24} className="rotate-180" />
-              Back to Home
-            </NeoButton>
-          </Link>
+          {/* Back to Home Button - Desktop */}
+          <div className="hidden lg:flex justify-center pt-12">
+            <Link to="/">
+              <NeoButton
+                variant="outline"
+                className="flex items-center gap-4 font-black group px-12 py-5 text-xl"
+              >
+                <ArrowRight size={24} className="rotate-180" />
+                Back to Home
+              </NeoButton>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
