@@ -20,7 +20,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
   ];
 
   return (
-    <div className="pt-24 md:pt-32 pb-16 md:pb-24 space-y-20 md:space-y-40 overflow-x-hidden px-4">
+    <div className="pt-32 pb-24 space-y-40 overflow-x-hidden px-4">
       {/* Header Grid */}
       <section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-center">
         <motion.div
